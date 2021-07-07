@@ -1,0 +1,1 @@
+java -jar -Dspring.profiles.active=prod -Dserver.port=$PORT target/saveup-backend*.jar --BD_URL=aa7dwqgfalbuyh.cgbxwxzwzocn.us-east-2.rds.amazonaws.com:5432/postgres --BD_USERNAME=saveup --BD_PASSWORD=pMRtmA7M2U

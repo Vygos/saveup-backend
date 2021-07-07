@@ -1,0 +1,12 @@
+version: '3'
+services:
+    saveup-backend:
+        build: .
+        container_name: 'saveupbackend'
+        ports:
+            - 8080:8080
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod
+            - BD_URL=aa7dwqgfalbuyh.cgbxwxzwzocn.us-east-2.rds.amazonaws.com:5432/postgres
+            - BD_USERNAME=saveup
+            - BD_PASSWORD=pMRtmA7M2U

@@ -1,0 +1,1 @@
+build: java -jar -Dspring.profiles.active=prod -Dserver.port=$PORT target/saveup-backend*.jar  $JAVA_OPTS
