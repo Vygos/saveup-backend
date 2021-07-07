@@ -7,7 +7,7 @@ before_install:
 
 script:
   - docker run saveup/saveup-backend ./mvnw test
-  - sudo docker run -p 8080:8080 -d -e SPRING_PROFILES_ACTIVE=$SPRING_PROFILES_ACTIVE -e BD_URL=$BD_URL -e BD_USERNAME=$BD_USERNAME -e BD_PASSWORD=$BD_PASSWORD vygos/saveup-backend
+  - sudo docker run -p 8080:8080 -d -e SPRING_PROFILES_ACTIVE=$SPRING_PROFILES_ACTIVE -e BD_URL=$BD_URL -e BD_USERNAME=$BD_USERNAME -e BD_PASSWORD=$BD_PASSWORD saveup/saveup-backend
 deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
