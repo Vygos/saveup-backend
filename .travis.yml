@@ -1,0 +1,20 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t saveup/saveup-backend .
+
+script:
+  - docker run saveup/saveup-backend ./mvnw test
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "saveup-backend2"
+  env: "Saveupbackend2-env"
+  bucket_name: "elasticbeanstalk-us-east-2-855433857104"
+  bucket_path: "saveup-backend2"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
