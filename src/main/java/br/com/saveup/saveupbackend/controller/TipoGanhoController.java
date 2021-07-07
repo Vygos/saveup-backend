@@ -69,4 +69,9 @@ public class TipoGanhoController {
         this.tipoGanhoService.deleteById(id);
         return ResponseEntity.noContent().build();
     }
+    
+    @GetMapping(value = "oi")
+    public String testContainer() {
+        return "Hello, its working healthcheck";
+    }
 }
