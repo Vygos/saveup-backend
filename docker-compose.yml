@@ -3,10 +3,6 @@ services:
     saveup-backend:
         build: .
         container_name: 'saveupbackend'
-        ports:
-            - 5000:8080
-        expose: 
-            - 8080
         environment:
             - SPRING_PROFILES_ACTIVE
             - BD_URL
