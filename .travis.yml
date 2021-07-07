@@ -1,13 +1,6 @@
 sudo: required
 services:
   - docker
-  
-env:
-  global:
-    - SPRING_PROFILES_ACTIVE=$SPRING_PROFILES_ACTIVE
-    - BD_USERNAME=$BD_USERNAME
-    - BD_URL=$BD_URL
-    - BD_PASSWORD=$BD_PASSWORD
 
 before_install:
   - docker build -t saveup/saveup-backend .
@@ -17,10 +10,10 @@ script:
 deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
-  app: "saveup-backend2"
-  env: "Saveupbackend2-env"
+  app: "saveupbackend"
+  env: "Saveupbackend-env"
   bucket_name: "elasticbeanstalk-us-east-2-855433857104"
-  bucket_path: "saveup-backend2"
+  bucket_path: "saveupbackend"
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
