@@ -10,4 +10,3 @@ services:
       - BD_URL
       - BD_USERNAME
       - BD_PASSWORD
-      - SERVER_PORT=8080
