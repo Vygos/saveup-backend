@@ -3,7 +3,7 @@ services:
     saveup-backend:
         build: .
         ports:
-          - 8080:8080
+          - $PORT:8080
         expose:
           - 8080
         container_name: 'saveupbackend'
