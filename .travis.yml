@@ -11,7 +11,7 @@ deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
   app: "saveupbackend"
-  env: "Saveupbackend-env"
+  env: "Saveupbackend-env-1"
   bucket_name: "elasticbeanstalk-us-east-2-855433857104"
   bucket_path: "saveupbackend"
   on:
