@@ -72,6 +72,6 @@ public class TipoGanhoController {
     
     @GetMapping(value = "oi")
     public String testContainer() {
-        return "Hello, its working healthcheck";
+        return "Hello, its working helth";
     }
 }
