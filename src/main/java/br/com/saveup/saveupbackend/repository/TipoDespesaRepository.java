@@ -18,9 +18,9 @@ public interface TipoDespesaRepository extends JpaRepository<TipoDespesa, Intege
 
     Page<TipoDespesa> findAllByEmailOrEmailIsNull(Pageable pageable, String email);
 
-    @Query(value = "SELECT TG.NOME FROM TIPO_DESPESA TG WHERE LOWER(TG.NOME) = LOWER(:nome) AND TG.EMAIL = :email " +
+    @Query(value = "SELECT TG.NOME FROM SAVEUP.TIPO_DESPESA TG WHERE LOWER(TG.NOME) = LOWER(:nome) AND TG.EMAIL = :email " +
             "UNION " +
-            "SELECT TG.NOME FROM TIPO_DESPESA TG WHERE LOWER(TG.NOME) = LOWER(:nome) AND TG.EMAIL IS NULL ",
+            "SELECT TG.NOME FROM SAVEUP.TIPO_DESPESA TG WHERE LOWER(TG.NOME) = LOWER(:nome) AND TG.EMAIL IS NULL ",
             nativeQuery = true)
     List<String> existsByNomeAndEmail(String nome, String email);
 

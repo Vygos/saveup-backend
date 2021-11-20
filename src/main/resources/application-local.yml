@@ -1,18 +1,27 @@
 spring:
   datasource:
-    url: jdbc:postgresql://aa7dwqgfalbuyh.cgbxwxzwzocn.us-east-2.rds.amazonaws.com:5432/postgres
-    username: saveup
-    password: pMRtmA7M2U
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+  flyway:
+    url: jdbc:postgresql://localhost:5432/postgres
+    user: postgres
+    password: postgres
+    baseline-on-migrate: true
+    default-schema: saveup
+    schemas:
+      - saveup
   jpa:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQL9Dialect
+        default_schema: saveup
         jdbc:
           lob:
             non_contextual_creation: true
     generate-ddl: false
     hibernate:
-      ddl-auto: validate
+      ddl-auto: none
     show-sql: true
 saveup:
   aws-access-key-id: AKIA4OK6UZBIGHGL7LUY

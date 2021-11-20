@@ -9,10 +9,12 @@ import br.com.saveup.saveupbackend.model.domain.Financa;
 
 public interface FinancaRepository extends JpaRepository<Financa, Integer> {
 
-	@Query(value = "SELECT * FROM FINANCA F WHERE F.ID_USUARIO = :id", nativeQuery = true)
+	@Query(value = "SELECT * FROM SAVEUP.FINANCA F WHERE F.ID_USUARIO = :id",
+		nativeQuery = true)
 	List<Financa> findAllByUserId(Integer id);
 
-	@Query(value = "SELECT * FROM FINANCA F WHERE F.ID_USUARIO = :id AND F.PERIODO = :periodo", nativeQuery = true)
+	@Query(value = "SELECT * FROM SAVEUP.FINANCA F WHERE F.ID_USUARIO = :id AND F.PERIODO = :periodo",
+		nativeQuery = true)
 	List<Financa> findAllByUserIdAndPeriod(Integer id, String periodo);
 
 }
