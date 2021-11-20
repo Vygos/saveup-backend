@@ -9,5 +9,6 @@ services:
             - SPRING_PROFILES_ACTIVE
             - BD_USERNAME
             - BD_PASSWORD
+            - BD_URL
             - AWS_ACCESS_KEY
             - AWS_SECRET_KEY
