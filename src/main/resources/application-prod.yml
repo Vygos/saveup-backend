@@ -3,6 +3,10 @@ spring:
     url: jdbc:postgresql://${BD_URL}:5432/postgres
     username: ${BD_USERNAME}
     password: ${BD_PASSWORD}
+  flyway:
+    url: jdbc:postgresql://${BD_URL}:5432/postgres
+    user: ${BD_USERNAME}
+    password: ${BD_PASSWORD}
   jpa:
     properties:
       hibernate:

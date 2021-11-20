@@ -10,7 +10,7 @@ script:
 deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
-  app: "SAVEUP_BACKEND"
+  app: "SAVEUP-BACKEND"
   env: "Saveupbackend-env"
   bucket_name: "elasticbeanstalk-us-east-2-855433857104"
   bucket_path: "saveupbackend"
