@@ -26,7 +26,10 @@ public class TipoDespesaService {
     private final ModelMapper modelMapper;
 
     public Page<TipoDespesa> findAll(Pageable pageable, TipoDespesa tipoDespesa) {
-        Example<TipoDespesa> tipoDespesaExample = Example.of(tipoDespesa, ExampleMatcher.matchingAll().withStringMatcher(ExampleMatcher.StringMatcher.CONTAINING));
+        Example<TipoDespesa> tipoDespesaExample = Example.of(tipoDespesa,
+            ExampleMatcher.matchingAll()
+                .withIgnoreCase()
+                .withStringMatcher(ExampleMatcher.StringMatcher.CONTAINING));
 
         return tipoDespesaRepository.findAll(tipoDespesaExample, pageable);
     }

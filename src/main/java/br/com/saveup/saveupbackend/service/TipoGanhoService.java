@@ -28,7 +28,11 @@ public class TipoGanhoService {
     private final ModelMapper modelMapper;
 
     public Page<TipoGanho> findAllByFilter(Pageable pageable, TipoGanho tipoGanho) {
-        Example<TipoGanho> tipoGanhoExample = Example.of(tipoGanho, ExampleMatcher.matchingAll().withStringMatcher(ExampleMatcher.StringMatcher.CONTAINING));
+        Example<TipoGanho> tipoGanhoExample = Example.of(tipoGanho,
+            ExampleMatcher.matchingAll()
+                .withIgnoreCase()
+                .withStringMatcher(ExampleMatcher.StringMatcher.CONTAINING)
+        );
 
         return tipoGanhoRepository.findAll(tipoGanhoExample, pageable);
     }
